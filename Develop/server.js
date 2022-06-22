@@ -11,18 +11,21 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(routes);
 
+
+// const sess = {
+//   secret: 'on the low secret',
+//   cookie: {},
+//   resave: false,
+//   saveUninitialized: true,
+//   store: new SequelizeStore({
+//     db: sequelize
+//   })
+// };
+
 // sync sequelize models to the database, then turn on the server
-const sess = {
-  secret: 'on the low secret',
-  cookie: {},
-  resave: false,
-  saveUninitialized: true,
-  store: new SequelizeStore({
-    db: sequelize
-  })
-};
 
-
-app.listen(PORT, () => {
-  console.log(`App listening on port ${PORT}!`);
+sequelize.sync({ force: false }).then(() => {
+  app.listen(PORT, () => {
+    console.log(`  Server Live on ${PORT}`);
+  });
 });
