@@ -10,7 +10,7 @@ router.get('/', (req, res) => {
   Product.findAll({
     include: {model: Category} ,
     include: {model: Tag}
- })
+  })
    .then(dbproductData => res.json(dbproductData))
    .catch(err => {
      console.log(err);
@@ -128,7 +128,7 @@ router.delete('/:id', (req, res) => {
         res.status(404).json({ message: 'No Product found with this id' });
         return;
       }
-      res.json(productData);
+      res.json(dbproductData);
     })
     .catch(err => {
       console.log(err);
