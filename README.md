@@ -30,7 +30,7 @@
   Project Complete
 
   ## Walkthrough Video that Demonstrates Functionality
-  https://www.youtube.com/watch?v=XehmNI5b4vM
+  https://www.youtube.com/watch?v=2ZbI6yIemNE
 
   ## Username
   https://github.com/yomiodusi
